@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>IoT Leaning : Exploration
+    </title>
+</head>
+
+<body>
+    <header>
+        <div class="front-page">
+            <div id="welcome">
+                <h2>Welcome</h2>
+                <h2>to</h2>
+                <h2>my</h2>
+                <h2>Project</h2>
+            </div>
+            <div id="main">
+                <h1>IoT Learning Kit</h1>
+                <cite>-- Gaurav Rana</cite>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <article id="overview">
+            <h2>Overview</h2>
+            <p>Welcome to the IoT Learning Kit blog! This platform is dedicated to exploring the fascinating world of
+                the Internet of Things (IoT) through a hands-on learning approach. Whether you're a student, hobbyist,
+                or professional, our comprehensive IoT Learning Kit provides the essential tools and knowledge to get
+                you started on your IoT journey. Let's dive into the various aspects of this project and understand the
+                foundational elements that make it an exciting educational experience.</p>
+        </article>
+        <hr>
+
+        <article>
+            <h2>Components</h2>
+            <div id="component">
+                <div id="nodemcu" class="component-box">
+                    <h4>NodeMCU</h4>
+                    <img src="https://i0.wp.com/circuits4you.com/wp-content/uploads/2018/02/NodeMCU.jpg?resize=350%2C350&ssl=1"
+                        alt="NodeMCU">
+                    <p>NodeMCU is a versatile, open-source IoT platform with built-in Wi-Fi, perfect for creating smart,
+                        connected devices.</p>
+                </div>
+                <div id="led" class="component-box">
+                    <h4>LED</h4>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADpCAMAAABx2AnXAAAAwFBMVEX///8REiQzv/SAgIAAAADa2tt6enoaptvCwsLn5+fv7++9vb0rvfMRuvP5/v5zz/Ynsucgq+AAABoAABe+5vsAABVVyfUKDCAsuO2MjZQQEiOUlJoAAB0fIC+bm6K35fhEw/SDfHelpaUXGCl5eYGCgopGRlIpKjhJSVRtbnZlZm4AAA4AABFbW2Y8PEno9/6a3Pmg3fjH7PqH1fdzzvbX8fzOzs5vb280M0Cqq67Dxch1dH1qanO1trchJDJeXmYrXdmwAAAEiUlEQVR4nO3b/VeiShzH8XCH2gp7GC5NI2LdheFJobKbC2ny//9XFx+6abllu13hy/m8zjEQ+WHeZ2D0dHRvDwAAAAAAAAAA4MXN8Or2/v727mp4U/VQvtDwvtVut42ZttFu3Q+rHtCXOLm7bhutFWXd9d1J1cP6Yw9lSOs1w7imPmu37bdZc+37qof2R07bm7NmZReEL8fTX0zXouyfqof3225/PV+kr8bh+11lGdEV5IOscnFskbzNPrgQ51N2V/Ugf8PNewsH5Sm7+3jCyim7qnqYn3ZyvUVXy6C35D9sM2HlZyty1+LtFrdYi+KKf7FdmEFuXdzqSizDTqse6CedIKzqkX4SwhBWEwhDWE0gDGE1gTCE1QTCEFYTCENYTSAMYTWBMLphl+cbnZEPa10ebNKAsM1lTQhrGY0MOzM2ljUg7OCy/NvIsHnEeRPDDs7fljUj7GB+Ob5oUNiBgbB6QxjCagJhCKsJhCGsJrYOI/cV00bO2MPDw/C/kMuzudWuVvn8+eP+RXkymd/KXbfbW/5bsVSeS+ar3Ft+bfaZ8VfVA94WwhBWEw0OW7EYu/HeITphr2bk9QRettZ/P0wmbM3x36Wj1SOHsyPfqxrPlzne//Ztfz1sdgRhtYUwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdSUYfuNDBv9KDUx7C2EUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjJrmhv3c3/95XPUo/gcneuno4/MAAAAAAAAAAGAjvaH2WEPtaQ2FMGqWYWL50Fa2msa5Jl6ezfb4y9OaW4SJVGgicBf72WKrdcwksYL0OcUNRWeaZFTKFmHdScxNaQ7Mjjlg0hXWgAuL5aWoxwaMCcFYNmIsVf5OwzrbHessjnZWX1vOmCMHjvJsxTx7rOzMtj2/F+ohY5OjROqjwNf18NHXg3SnMyY681tkfjsIPn+ycm8sXuu6nfmmK7jo8vJVvhqmWdKdRGNzHMWMqa7U2Hic9NORriI7GLEi/56y6aHOhdhlF1dMcc0KskA4wlWTtNxwRw0c4biuKwLhapGnEjvp+UrF0pfxRGaeMlfDeJHIwo4nns8tKXp9K1Yh77Ou7tnhE0ufHvuD4HA03e0NxmMvyXteImPp2bFX5KGSUfxDalMZKuV5uSyyQDLJenEkPeWpXOXdcD1ME7nnSBEEtnCKIio0Owm7vUg+pnqgjx89+8nzR6He32mYCJ60PCwjip6Xu0mvlyhbhrlKU5lIOdZsO3LzNCnCWMqeZqcT1ZOJvVztnsN45PBAeiKQ40HMYukEmUhsZVpF2LWLQb+8JCM2Tnc7ZSLgTjYIeeZmjsgyHmQu9wORulkQBE4nmPoiTDLu+v3MmWamb7mZGybrYbN3KGHy+YNrXXN2N3HLnB0XVrfcWILv/l1MzNYKMVtEFntCWx4Qi12xWFmeT1vurYc1DcKoaWzYv8gOseM4isZNAAAAAElFTkSuQmCC"
+                        alt="LED">
+                    <p>LEDs are essential components providing visual indicators for various states and actions, ideal
+                        for learning basic electronic control in IoT projects.</p>
+                </div>
+                <div id="buzzer" class="component-box">
+                    <h4>Buzzer</h4>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcghlE2F1493z5pyVQ3AhjQJ-6YfOiivamQ&s"
+                        alt="Buzzer">
+                    <p>A buzzer provides auditory alerts and notifications, enhancing the interactivity of your IoT
+                        projects with sound-based feedback.</p>
+                </div>
+                <div id="7segment" class="component-box">
+                    <h4>7 segment</h4>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="7 segment">
+                    <p>The 7-segment display is a fundamental component for showcasing numerical information, crucial
+                        for creating digital readouts and displays in IoT projects.</p>
+                </div>
+                <div id="dc-motor" class="component-box">
+                    <h4>DC motor</h4>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="DC motor">
+                    <p>The DC motor is a key component for exploring motor control principles in IoT projects, enabling
+                        movement and automation in various applications.
+                    <p>
+                </div>
+                <div id="lcd" class="component-box">
+                    <h4>LCD</h4>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="LCD">
+                    <p>The LCD (Liquid Crystal Display) is essential for presenting readable information in IoT
+                        projects, facilitating real-time data display and user interaction.</p>
+                </div>
+                <div id="relay" class="component-box">
+                    <h4>Relay</h4>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuma6uNet-IoedQYMIVg2z_j4sYwf_LmomOQ&s"
+                        alt="Relay">
+                    <p>A relay serves as an electrically operated switch, enabling control of high-power devices with
+                        low-power signals, pivotal for remote device manipulation in IoT projects.</p>
+                </div>
+                <div id="switch" class="component-box">
+                    <h4>Switch</h4>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Switch">
+                    <p>A switch facilitates manual control and interaction in IoT projects, allowing users to toggle
+                        device states and trigger actions with physical inputs.</p>
+                </div>
+            </div>
+        </article>
+        <hr>
+
+        <article id="working">
+            <h2>Working</h2>
+            <p>The working of the IoT Learning Kit project involves integrating various components to create interactive
+                and functional IoT applications. At the core of the project is the NodeMCU, serving as the central
+                controller for the system. Let's delve into how each component works together to bring the project to
+                life.
+
+                The NodeMCU, powered by the ESP8266 Wi-Fi SoC, forms the backbone of the IoT system. It connects to a
+                Wi-Fi network, enabling communication with other devices and the internet. Using its GPIO pins, the
+                NodeMCU interfaces with the different components of the project, such as LEDs, a buzzer, a DC motor, an
+                LCD display, a relay, a switch, and a 7-segment display.</p>
+
+        </article>
+
+        <article id="nodemcu1">
+            <h3>1. NodeMCU</h3>
+            <div class="componentworking">
+                <img src="https://i0.wp.com/circuits4you.com/wp-content/uploads/2018/02/NodeMCU.jpg?resize=350%2C350&ssl=1"
+                    alt="NodeMCU" style="border-radius: 30px;">
+
+                <p>The NodeMCU, powered by the ESP8266 Wi-Fi SoC, serves as the central brain of the IoT Learning
+                    Kit
+                    project. With its built-in Wi-Fi capabilities, it seamlessly connects to wireless networks,
+                    enabling
+                    communication with other devices and the internet. Equipped with GPIO pins, it interfaces with
+                    components like LEDs, a buzzer, a DC motor, an LCD display, a relay, a switch, and a 7-segment
+                    display.
+                    Through its GPIO pins, the NodeMCU controls these components, orchestrating their functions and
+                    interactions based on programmed instructions. Its versatility allows for the creation of a wide
+                    range
+                    of IoT applications, from simple sensor monitoring systems to complex home automation setups. By
+                    programming the NodeMCU using platforms like Arduino IDE or MicroPython, users can customize and
+                    expand
+                    the functionality of their IoT projects. Its compact size and low power consumption make it
+                    ideal
+                    for
+                    embedded applications, while its robust community support ensures ample resources and tutorials
+                    for
+                    users of all skill levels. In summary, the NodeMCU empowers users to explore the exciting
+                    possibilities
+                    of IoT technology, providing a flexible and accessible platform for building innovative
+                    projects.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>2. LED</h3>
+            <div class="componentworking">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADpCAMAAABx2AnXAAAAwFBMVEX///8REiQzv/SAgIAAAADa2tt6enoaptvCwsLn5+fv7++9vb0rvfMRuvP5/v5zz/Ynsucgq+AAABoAABe+5vsAABVVyfUKDCAsuO2MjZQQEiOUlJoAAB0fIC+bm6K35fhEw/SDfHelpaUXGCl5eYGCgopGRlIpKjhJSVRtbnZlZm4AAA4AABFbW2Y8PEno9/6a3Pmg3fjH7PqH1fdzzvbX8fzOzs5vb280M0Cqq67Dxch1dH1qanO1trchJDJeXmYrXdmwAAAEiUlEQVR4nO3b/VeiShzH8XCH2gp7GC5NI2LdheFJobKbC2ny//9XFx+6abllu13hy/m8zjEQ+WHeZ2D0dHRvDwAAAAAAAAAA4MXN8Or2/v727mp4U/VQvtDwvtVut42ZttFu3Q+rHtCXOLm7bhutFWXd9d1J1cP6Yw9lSOs1w7imPmu37bdZc+37qof2R07bm7NmZReEL8fTX0zXouyfqof3225/PV+kr8bh+11lGdEV5IOscnFskbzNPrgQ51N2V/Ugf8PNewsH5Sm7+3jCyim7qnqYn3ZyvUVXy6C35D9sM2HlZyty1+LtFrdYi+KKf7FdmEFuXdzqSizDTqse6CedIKzqkX4SwhBWEwhDWE0gDGE1gTCE1QTCEFYTCENYTSAMYTWBMLphl+cbnZEPa10ebNKAsM1lTQhrGY0MOzM2ljUg7OCy/NvIsHnEeRPDDs7fljUj7GB+Ob5oUNiBgbB6QxjCagJhCKsJhCGsJrYOI/cV00bO2MPDw/C/kMuzudWuVvn8+eP+RXkymd/KXbfbW/5bsVSeS+ar3Ft+bfaZ8VfVA94WwhBWEw0OW7EYu/HeITphr2bk9QRettZ/P0wmbM3x36Wj1SOHsyPfqxrPlzne//Ztfz1sdgRhtYUwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdSUYfuNDBv9KDUx7C2EUYMwahBGDcKoQRg1CKMGYdQgjBqEUYMwahBGDcKoQRg1CKMGYdQgjJrmhv3c3/95XPUo/gcneuno4/MAAAAAAAAAAGAjvaH2WEPtaQ2FMGqWYWL50Fa2msa5Jl6ezfb4y9OaW4SJVGgicBf72WKrdcwksYL0OcUNRWeaZFTKFmHdScxNaQ7Mjjlg0hXWgAuL5aWoxwaMCcFYNmIsVf5OwzrbHessjnZWX1vOmCMHjvJsxTx7rOzMtj2/F+ohY5OjROqjwNf18NHXg3SnMyY681tkfjsIPn+ycm8sXuu6nfmmK7jo8vJVvhqmWdKdRGNzHMWMqa7U2Hic9NORriI7GLEi/56y6aHOhdhlF1dMcc0KskA4wlWTtNxwRw0c4biuKwLhapGnEjvp+UrF0pfxRGaeMlfDeJHIwo4nns8tKXp9K1Yh77Ou7tnhE0ufHvuD4HA03e0NxmMvyXteImPp2bFX5KGSUfxDalMZKuV5uSyyQDLJenEkPeWpXOXdcD1ME7nnSBEEtnCKIio0Owm7vUg+pnqgjx89+8nzR6He32mYCJ60PCwjip6Xu0mvlyhbhrlKU5lIOdZsO3LzNCnCWMqeZqcT1ZOJvVztnsN45PBAeiKQ40HMYukEmUhsZVpF2LWLQb+8JCM2Tnc7ZSLgTjYIeeZmjsgyHmQu9wORulkQBE4nmPoiTDLu+v3MmWamb7mZGybrYbN3KGHy+YNrXXN2N3HLnB0XVrfcWILv/l1MzNYKMVtEFntCWx4Qi12xWFmeT1vurYc1DcKoaWzYv8gOseM4isZNAAAAAElFTkSuQmCC"
+                    alt="LED" style="border-radius: 30px;">
+
+                <p>LEDs, or Light Emitting Diodes, are fundamental components in the IoT Learning Kit project, serving
+                    as visual indicators for various states and actions within the system. When powered, LEDs emit
+                    light, providing feedback or signaling specific events. In the project, the NodeMCU controls the
+                    LEDs by toggling the GPIO pins connected to them, turning them on or off based on programmed
+                    conditions. LEDs are versatile and energy-efficient, making them ideal for applications where visual
+                    feedback is required. They can be programmed to display different colors, blink patterns, or
+                    brightness levels, enhancing the interactivity and usability of the IoT projects. LEDs play a
+                    crucial role in conveying information to users, whether indicating system status, triggering alerts,
+                    or signaling user interactions. With their simplicity and effectiveness, LEDs contribute
+                    significantly to the functionality and aesthetics of the IoT Learning Kit projects.</p>
+            </div>
+
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>3. Buzzer</h3>
+            <div class="componentworking">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcghlE2F1493z5pyVQ3AhjQJ-6YfOiivamQ&s"
+                    alt="Buzzer" style="border-radius: 30px;">
+
+                <p>A buzzer is an essential component in the IoT Learning Kit project, providing auditory feedback
+                    through sound. It is controlled by the NodeMCU, which sends signals to the buzzer via its GPIO pins.
+                    The buzzer can produce different tones and patterns, enabling it to serve various purposes such as
+                    alerts, notifications, and alarms. For instance, it can emit a sound when a sensor detects a
+                    specific event, like a door opening or a temperature threshold being reached. By adjusting the
+                    signal frequency, the NodeMCU can make the buzzer produce different sounds, adding an extra layer of
+                    interactivity to your projects. The buzzer's ability to provide immediate auditory feedback makes it
+                    an invaluable tool for enhancing user experience and ensuring timely responses to system events in
+                    IoT applications.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>4. 7 segment</h3>
+            <div class="componentworking">
+                <img src="data:image/jpeg;base64,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"
+                    alt="7 segment" style="border-radius: 30px;">
+
+                <p>A 7-segment display is a key component in the IoT Learning Kit, used for displaying numerical
+                    information in a clear and readable format. Controlled by the NodeMCU, each segment of the display
+                    can be lit up individually to form digits from 0 to 9. By manipulating the GPIO pins, the NodeMCU
+                    sends signals to the appropriate segments to create the desired numbers. This functionality is
+                    crucial for projects that require real-time data presentation, such as counters, timers, or
+                    temperature displays. The 7-segment display enhances the interactivity and usability of your IoT
+                    projects by providing immediate visual feedback, making it easier for users to understand and
+                    interact with the system. Its simplicity and effectiveness make it a versatile tool for a wide range
+                    of applications, from basic educational projects to more complex IoT solutions.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>5. DC motor</h3>
+            <div class="componentworking">
+                <img src="data:image/jpeg;base64,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"
+                    alt="DC motor" style=" border-radius: 30px;">
+
+                <p>A DC motor in the IoT Learning Kit is essential for demonstrating principles of motor control and
+                    enabling movement in various applications. Controlled by the NodeMCU through its GPIO pins, the
+                    motor can be powered on and off, and its speed and direction can be adjusted by varying the voltage
+                    and polarity supplied to it. This allows for precise control over mechanical components, making it
+                    ideal for projects like automated fans, robotic arms, or conveyor belts. The NodeMCU's programming
+                    can dictate the motor's behavior based on sensor inputs or predefined conditions, adding dynamic
+                    functionality to your IoT projects. By learning to control a DC motor, users gain valuable insights
+                    into electromechanical systems and their integration into smart devices.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>6. LCD Display</h3>
+            <div class="componentworking">
+                <img src="data:image/jpeg;base64,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"
+                    alt="LCD" style=" border-radius: 30px;">
+
+                <p>The LCD (Liquid Crystal Display) in the IoT Learning Kit is a vital component for presenting
+                    information in a clear and readable format. The included 16x2 LCD display shows two lines of 16
+                    characters each, making it perfect for displaying sensor data, system status, or user prompts.
+                    Controlled by the NodeMCU via its GPIO pins, the LCD receives commands and data to display the
+                    desired text and numbers. The NodeMCU communicates with the LCD using protocols like I2C or parallel
+                    data transfer, allowing efficient and precise control.
+                    <br>
+                    Integrating the LCD into your projects enhances their interactivity and usability by providing
+                    real-time feedback. For instance, you can display temperature readings from a sensor, status updates
+                    for connected devices, or instructions for the user. This capability is crucial for debugging and
+                    monitoring the system, as it allows immediate visual verification of the system's operation.
+                    <br>
+                    Programming the LCD involves sending specific commands to control cursor position, clear the
+                    display, or adjust the brightness and contrast. By mastering these commands, users can create
+                    dynamic and responsive displays, improving the overall functionality and user experience of their
+                    IoT projects. The LCD's versatility and ease of use make it an indispensable tool for developing
+                    informative and interactive IoT applications.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>7. Relay</h3>
+            <div class="componentworking">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuma6uNet-IoedQYMIVg2z_j4sYwf_LmomOQ&s"
+                    alt="Relay" style=" border-radius: 30px;">
+
+                <p>A relay in the IoT Learning Kit is a crucial component for controlling high-power devices with
+                    low-power signals. It acts as an electrically operated switch, allowing the NodeMCU to manage
+                    appliances and other high-voltage devices safely. The relay has two main parts: the coil, which is
+                    activated by the low-power signal from the NodeMCU, and the contacts, which open or close the
+                    circuit to the high-power device.
+                    <br>
+                    When the NodeMCU sends a signal to the relay, it energizes the coil, creating a magnetic field that
+                    pulls the contacts together, completing the circuit and allowing current to flow to the connected
+                    device. This mechanism enables the NodeMCU to control lights, motors, or other appliances remotely,
+                    enhancing the automation capabilities of IoT projects.
+                    <br>
+                    The relay's ability to switch larger loads makes it ideal for home automation systems, industrial
+                    controls, and other applications where direct control by the NodeMCU's low-power output is
+                    insufficient. By incorporating a relay into your projects, you can expand the range of devices your
+                    IoT system can control, providing greater functionality and versatility. This integration is key for
+                    creating smart environments where electronic devices can be managed efficiently and safely.
+                </p>
+            </div>
+        </article>
+
+        <article id="nodemcu1">
+            <h3>8. Switch</h3>
+            <div class="componentworking">
+                <img src="data:image/jpeg;base64,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"
+                    alt="Switch" style=" border-radius: 30px;">
+
+                <p>A switch in the IoT Learning Kit is a simple yet essential component for manual control and user
+                    interaction within your projects. It allows the user to toggle between different states, such as
+                    turning a device on or off or changing modes in the system. The switch operates by either completing
+                    or breaking an electrical circuit when pressed or flipped.
+                    <br>
+                    When integrated with the NodeMCU, the switch is connected to one of the GPIO pins. The NodeMCU
+                    continuously monitors the state of the switch, detecting whether it is open (off) or closed (on).
+                    Based on the switch's state, the NodeMCU can trigger specific actions, such as lighting an LED,
+                    activating a buzzer, or sending data to the cloud.
+                    <br>
+                    The switch is fundamental in creating interactive IoT applications, enabling users to provide input
+                    and control the behavior of the system manually. For instance, a switch could be used to start or
+                    stop a motor, switch between different display screens on an LCD, or reset a counter on a 7-segment
+                    display.
+                </p>
+            </div>
+        </article>
+
+        <article id="code">
+            <h2>Writing and Understanding Code</h2>
+            <p>Welcome to the coding section of the IoT Learning Kit blog! In this section, we will explore how to write
+                and understand code for controlling the various components of your IoT Learning Kit. Using the NodeMCU
+                as the central controller, we'll program it to interact with LEDs, a buzzer, a DC motor, an LCD display,
+                a relay, a switch, and a 7-segment display. Let's dive in!
+            </p>
+            <div id="setup">
+                <h3>Setting Up Your Development Environment</h3>
+                <p>To start coding for the NodeMCU, you need to set up your development environment. We recommend using
+                    the Arduino IDE, which is user-friendly and supports the ESP8266 microcontroller used in the
+                    NodeMCU.</p>
+                <ol>
+                    <li><strong>Install Arduino IDE:</strong> Download and install the Arduino IDE from the official
+                        website.</li>
+                    <li><strong>Add ESP8266 Board:</strong> In the Arduino IDE, go to File > Preferences and add the
+                        following URL to the
+                        "Additional Boards Manager URLs" field:
+                        <q><b>http://arduino.esp8266.com/stable/package_esp8266com_index.json.</b></q> Then go to Tools
+                        > Board >
+                        Boards Manager, search for "esp8266" and install it.
+                    </li>
+                    <li><strong>Select NodeMCU Board:</strong> Select the NodeMCU board from Tools > Board > NodeMCU 1.0
+                        (ESP-12E Module).</li>
+                </ol>
+            </div>
+
+        </article>
+
+        <article id="coding">
+
+            <div class="codingpart">
+                <h3>1. Blinking an LED</h3>
+                <div>
+                    <pre>
+ // Define the GPIO pin where the LED is connected
+ const int ledPin = D1; // D1 corresponds to GPIO5
+
+ void setup() {
+ // Initialize the LED pin as an output
+ pinMode(ledPin, OUTPUT);
+ }
+
+ void loop() {
+ // Turn the LED on
+ digitalWrite(ledPin, HIGH);
+ delay(1000); // Wait for 1 second
+
+ // Turn the LED off
+ digitalWrite(ledPin, LOW);
+ delay(1000); // Wait for 1 second
+ }
+
+                    </pre>
+
+                </div>
+            </div>
+
+            <div class="codingpart">
+                <h3>2. Controlling a Buzzer</h3>
+                <div>
+                    <pre>
+const int buzzerPin = D2; // D2 corresponds to GPIO4
+
+void setup() {
+  // Initialize the buzzer pin as an output
+  pinMode(buzzerPin, OUTPUT);
+}
+                        
+void loop() {
+  // Turn the buzzer on
+  digitalWrite(buzzerPin, HIGH);
+  delay(500); // Wait for 0.5 seconds
+                        
+  // Turn the buzzer off
+  digitalWrite(buzzerPin, LOW);
+  delay(500); // Wait for 0.5 seconds
+}
+
+                    </pre>
+
+                </div>
+            </div>
+
+            <div class="codingpart">
+                <h3>3. Controlling a DC Motor</h3>
+                <div>
+                    <pre>
+  const int motorPin = D3; // D3 corresponds to GPIO0
+
+  void setup() {
+    // Initialize the motor pin as an output
+    pinMode(motorPin, OUTPUT);
+  }
+                        
+  void loop() {
+    // Turn the motor on
+    digitalWrite(motorPin, HIGH);
+    delay(2000); // Run motor for 2 seconds
+                        
+    // Turn the motor off
+    digitalWrite(motorPin, LOW);
+    delay(2000); // Wait for 2 seconds before restarting
+  }
+
+                    </pre>
+
+                </div>
+            </div>
+
+            <div class="codingpart">
+                <h3>4. Displaying Information on an LCD</h3>
+                <div>
+                    <pre>
+ #include&ltLiquidCrystal.h&gt
+ LiquidCrystal lcd(D0, D1, D2, D3, D4, D5);
+
+ void setup(){
+
+    lcd.begin(16,2);
+
+ }
+
+ void loop(){
+
+    lcd.setCursor(0, 0);
+    lcd.print("Hello there!");
+
+ }
+
+                    </pre>
+
+                </div>
+            </div>
+
+            <div class="codingpart">
+                <h3>5. Using a Relay</h3>
+                <div>
+                    <pre>
+  const int relayPin = D4; // D4 corresponds to GPIO2
+
+  void setup() {
+    // Initialize the relay pin as an output
+    pinMode(relayPin, OUTPUT);
+  }
+                        
+  void loop() {
+    // Turn the relay on
+    digitalWrite(relayPin, HIGH);
+    delay(3000); // Keep the relay on for 3 seconds
+                        
+    // Turn the relay off
+    digitalWrite(relayPin, LOW);
+    delay(3000); // Keep the relay off for 3 seconds
+  }
+                        
+                    </pre>
+
+                </div>
+            </div>
+
+            <div class="codingpart">
+                <h3>6. Displaying Numbers on a 7-Segment Display</h3>
+                <div style="height: fit-content;">
+                    <pre>
+  void setup(){
+
+    pinMode(D0, OUTPUT);
+    pinMode(D1, OUTPUT);
+    pinMode(D2, OUTPUT);
+    pinMode(D3, OUTPUT);
+    pinMode(D4, OUTPUT);
+    pinMode(D5, OUTPUT);
+    pinMode(D6, OUTPUT);
+
+  }
+
+  void loop(){
+
+    digitalWrite(D0, HIGH);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, HIGH);
+    digitalWrite(D5, HIGH);
+    digitalWrite(D6, LOW);
+
+    delay(2000);
+
+    digitalWrite(D0, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, LOW);
+    digitalWrite(D5, LOW);
+    digitalWrite(D6, LOW);
+
+    delay(2000);
+
+  }
+
+                    </pre>
+
+                </div>
+            </div>
+
+
+
+        </article>
+
+        <article>
+            <h2 style="margin-bottom: 50px;">Original Image</h2>
+            <div id="original-photo">
+                <img src="/WhatsApp Image 2024-05-30 at 11.21.37 PM (1).jpeg" alt="Front-Side">
+                <img src="/WhatsApp Image 2024-05-30 at 11.21.37 PM.jpeg" alt="Back-Side">
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 35px; text-shadow: 5cap;">IoT Learning Kit Project</p>
+        </div>
+        <div class="footer-content">
+            <h4>Contact Us</h4>
+            Have questions or need support? Feel free to reach out to us:
+
+            <ul>
+                <li>Email: support@iotlearningkit.com</li>
+                <li>Phone: +1 (123) 456-7890</li>
+            </ul>
+
+
+        </div>
+        <div class="footer-content">
+            <h4>Follow Us
+            </h4>
+            Stay connected and keep up with our latest updates:
+
+            <ul>
+                <li>Facebook: IoT Learning Kit</li>
+                <li>Twitter: @IoTLearningKit</li>
+                <li>Instagram: @IoTLearningKit</li>
+            </ul>
+        </div>
+        <div class="footer-content">
+            <h4>Legal</h4>
+            <ul>
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Cookie Policy</li>
+            </ul>
+
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
